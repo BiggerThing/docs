@@ -1,0 +1,22 @@
+{
+  "name": "vaiui-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vuepress dev docs --open",
+    "build": "vuepress build docs",
+    "gen": "plop --plopfile lib/index.js",
+    "copy": "node lib/sync/index.js",
+    "sync": "yarn build && yarn copy",
+    "md-lint": "zhlint docs/{article,design,business,test,algorithms,hk,base/*,utils/*,theroy/*}/**/*.md'",
+    "md-fix": "zhlint 'docs/{article,design,business,test,algorithms,hk,base/*,utils/*,theroy/*}/**/*.md' --fix"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-docsearch": "^2.0.0-beta.50",
+    "@vuepress/plugin-search": "^2.0.0-beta.50",
+    "plop": "^3.1.1",
+    "vuepress": "^2.0.0-beta.50",
+    "zhlint": "^0.6.2"
+  }
+}
